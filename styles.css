@@ -1,0 +1,154 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #1e90ff;
+    color: white;
+    text-align: center;
+    padding: 1.5em 0;
+    position: relative;
+}
+
+.logo-container {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: white;
+}
+
+.logo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h1 {
+    margin: 0.5em 0 0.2em 0;
+}
+
+p {
+    margin: 0;
+}
+
+nav {
+    background-color: #4682b4;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffeb3b;
+}
+
+.menu-section {
+    display: none;
+    padding: 2em;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.menu-section.active {
+    display: block;
+}
+
+.menu-item {
+    background-color: #e6f7ff;
+    border: 1px solid #b3d8ff;
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item h3 {
+    margin: 0 0 0.5em 0;
+    color: #1e90ff;
+}
+
+.menu-item p {
+    margin: 0 0 1em 0;
+}
+
+.menu-item span {
+    font-weight: bold;
+    color: #1e90ff;
+}
+
+footer {
+    background-color: #1e90ff;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+.top-menu {
+    background-color: #0a3d62; /* Azul mais escuro para o menu especial */
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+    z-index: 1000; /* Garante que o menu especial fique acima do conteúdo abaixo */
+}
+
+.top-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.top-menu ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.top-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.top-menu ul li a:hover {
+    color: #3366ff; /* Azul claro ao passar o mouse */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

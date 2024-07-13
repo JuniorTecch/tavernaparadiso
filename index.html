@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taverna Paradiso</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #1e90ff;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: relative;
+        }
+
+        .logo-container {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: white;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            margin: 0.5em 0 0.2em 0;
+            font-size: 1.8em;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        nav {
+            background-color: #4682b4;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            padding: 10px;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            color: #ffeb3b;
+        }
+
+        .menu-section {
+            display: none;
+            padding: 2em;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .menu-section.active {
+            display: block;
+        }
+
+        .menu-item {
+            background-color: #e6f7ff;
+            border: 1px solid #b3d8ff;
+            padding: 1em;
+            margin-bottom: 1em;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item h3 {
+            margin: 0 0 0.5em 0;
+            color: #1e90ff;
+            font-size: 1.2em;
+        }
+
+        .menu-item p {
+            margin: 0 0 0.5em 0;
+            font-size: 0.9em;
+        }
+
+        .menu-item span {
+            font-weight: bold;
+            color: #1e90ff;
+        }
+
+        footer {
+            background-color: #1e90ff;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: auto;
+        }
+
+        .top-menu {
+            background-color: #0a3d62; /* Azul mais escuro para o menu especial */
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+            z-index: 1000; /* Garante que o menu especial fique acima do conteúdo abaixo */
+        }
+
+        .top-menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Para garantir que os itens se ajustem em telas menores */
+        }
+
+        .top-menu ul li {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .top-menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            padding: 8px 15px;
+            display: block;
+            border-radius: 5px;
+        }
+
+        .top-menu ul li a:hover {
+            color: #3366ff; /* Azul claro ao passar o mouse */
+            background-color: #0a3d62; /* Fundo escuro ao passar o mouse */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Estilos para telas menores */
+        @media (max-width: 768px) {
+            .logo-container {
+                width: 80px;
+                height: 80px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .top-menu ul li {
+                margin-right: 8px;
+                margin-bottom: 8px;
+            }
+
+            .top-menu ul li a {
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-menu">
+        <ul>
+            <li><a href="#Lanostracarni" class="menu-link">La Nostra Carni</a></li>
+            <li><a href="#risotto" class="menu-link">Risotto</a></li>
+            <li><a href="#DoMarallatavola" class="menu-link">Do Mar alla tavola</a></li>
+            <li><a href="#Lenostrepasteartigianale" class="menu-link">Le nostre paste artigianale</a></li>
+            <li><a href="#entradas-aperitivos" class="menu-link">Per Iniziare....</a></li>
+        </ul>
+    </div>
+
+         <!-- Lanostracarni -->
+        <section id="Lanostracarni" class="menu-section">
+            <h2>La nostra carni</h2>
+        
+            <!-- Prime rib (per due persone) -->
+            <div class="menu-item">
+                <h3>Prime Rib (per due persone)</h3>
+                <p>Corte bovino com acompanhamento a escolha (risoto de funghi ou massa Alfredo)</p>
+                <span>R$ 220,00</span>
+            </div>
+        
+            <!-- Corte especial wagyu con Gnocchi di zucca alle mandole -->
+            <div class="menu-item">
+                <h3>Corte especial wagyu con Gnocchi di zucca alle mandole</h3>
+                <p>Corte especial de wagyu com nhoque de abobora e fonduta de queijo</p>
+                <span>R$ 180,00</span>
+            </div>
+        
+            <!-- Scottadito con pasta all'alfredo -->
+            <div class="menu-item">
+                <h3>Scottadito con pasta all'alfredo</h3>
+                <p>Carré de cordeiro e massa com molho Alfredo</p>
+                <span>R$ 160,00</span>
+            </div>
+        
+            <!-- Filetto grigliato con risotto ai funghi porcini -->
+            <div class="menu-item">
+                <h3>Filetto grigliato con risotto ai funghi porcini</h3>
+                <p>Filé mignon grelhado com risoto de cogumelos porcini</p>
+                <span>R$ 170,00</span>
+            </div>
+        
+            <!-- Filetto con pasta all' alfredo -->
+            <div class="menu-item">
+                <h3>Filetto con pasta all' alfredo</h3>
+                <p>Filé mignon e massa com molho alfredo</p>
+                <span>R$ 140,00</span>
+            </div>
+        
+            <!-- Filetto welligton con musseline di patate -->
+            <div class="menu-item">
+                <h3>Filetto welligton con musseline di patate</h3>
+                <p>Filé mignon enrolado na massa folhada, recheada com musselina de batata</p>
+                <span>R$ 190,00</span>
+            </div>
+        
+            <!-- Tagliata alla rucola con spaghetti aglio e olio -->
+            <div class="menu-item">
+                <h3>Tagliata alla rucola con spaghetti aglio e olio</h3>
+                <p>Filé mignon fatiado com alecrim e azeite balsâmico sobre cama de rúcula com espaguete com alho e azeite</p>
+                <span>R$ 150,00</span>
+            </div>
+        
+            <!-- Scaloppine ai funghi porcinni, gnocchi di patate con fonduta di formaggio -->
+            <div class="menu-item">
+                <h3>Scaloppine ai funghi porcinni, gnocchi di patate con fonduta di formaggio</h3>
+                <p>Bife de filé mignon levemente empanado com molho de cogumelos porcini e nhoque de batata com fonduta de queijo</p>
+                <span>R$ 140,00</span>
+            </div>
+        
+            <!-- Anatra con le spezie e risotto de arancia -->
+            <div class="menu-item">
+                <h3>Anatra con le spezie e risotto de arancia</h3>
+                <p>Peito de pato com especiarias e risotto de laranja</p>
+                <span>R$ 150,00</span>
+            </div>
+        
+            <!-- Classico piemontese Ossobuco con risotto alla milanese -->
+            <div class="menu-item">
+                <h3>Classico piemontese Ossobuco con risotto alla milanese</h3>
+                <p>Ossobuco com risoto de linguiça e açafrão italiano</p>
+                <span>R$ 150,00</span>
+            </div>
+        
+            <!-- Spezzatino di carne con polenta bianca ou gialla e funghetto -->
+            <div class="menu-item">
+                <h3>Spezzatino di carne con polenta bianca ou gialla e funghetto</h3>
+                <p>Cubos de carne com molho da casa e polenta branca ou amarela cremosa</p>
+                <span>R$ 130,00</span>
+            </div>
+        </section>
+        <!-- fim-->
+
+        <!-- Risotto-->
+        <section id="risotto" class="menu-section">
+            <h2>Risotto</h2>
+
+            <!-- Risotto di polipo -->
+            <div class="menu-item">
+                <h3>Risotto di polipo</h3>
+                <p>Risoto de polvo</p>
+                <span>R$ 140,00</span>
+            </div>
+
+            <!-- Risotto ai gamberi shimeji e brie -->
+            <div class="menu-item">
+                <h3>Risotto ai gamberi shimeji e brie</h3>
+                <p>Risoto de camarão, shimeji e queijo brie</p>
+                <span>R$ 150,00</span>
+            </div>
+
+            <!-- Risotto ai formaggio grana e aragosta -->
+            <div class="menu-item">
+                <h3>Risotto ai formaggio grana e aragosta</h3>
+                <p>Risoto com queijo grana padano, lagosta temperada com manteiga ervas e alho</p>
+                <span>R$ 180,00</span>
+            </div>
+        </section>
+        <!--Fim-->
+
+        <!-- Do Mar alla tavola -->
+        <section id="DoMarallatavola" class="menu-section">
+            <!-- Grigliate di mare -->
+            <div class="menu-item">
+                <h3>Grigliate di mare</h3>
+                <p>Lulas, polvo e camarão com risoto de limão e legumes</p>
+                <span>R$ 170,00</span>
+            </div>
+
+            <!-- Pesce grigliato con risotto di limone -->
+            <div class="menu-item">
+                <h3>Pesce grigliato con risotto di limone</h3>
+                <p>Peixe grelhado com risoto de limão e legumes salteados</p>
+                <span>R$ 160,00</span>
+            </div>
+
+            <!-- Tonno in crosta di sesamo con pure di wasabi -->
+            <div class="menu-item">
+                <h3>Tonno in crosta di sesamo con pure di wasabi</h3>
+                <p>Atum grelhado em crosta de gergelim com purê de wasabi</p>
+                <span>R$ 150,00</span>
+            </div>
+
+            <!-- Stravaganza -->
+            <div class="menu-item">
+                <h3>Stravaganza</h3>
+                <p>Lagosta, camarão, polvo, lula, lagostim, mexilhões e legumes</p>
+                <span>R$ 300,00</span>
+            </div>
+        </section>
+        <!-- Fim-->
+
+        <!-- Le nostre paste artigianale-->
+        <section id="Lenostrepasteartigianale" class="menu-section">
+        <h2>Le nostre paste artigianale</h2>
+
+            <!-- Il ragù -->
+            <div class="menu-item">
+                <h3>Il ragù</h3>
+                <p>Molho à bolonhesa</p>
+                <span>R$ 110,00</span>
+            </div>
+
+            <!-- Ai frutti di mare -->
+            <div class="menu-item">
+                <h3>Ai frutti di mare</h3>
+                <p>Com frutos do mar caseiros e salsa regada com vinho branco</p>
+                <span>R$ 150,00</span>
+            </div>
+
+            <!-- Alla carbonara -->
+            <div class="menu-item">
+                <h3>Alla carbonara</h3>
+                <p>Com creme de ovo, pecorino, bacon finalizado com ovo poche</p>
+                <span>R$ 120,00</span>
+            </div>
+
+            <!-- Gamberi e aragosta al tartufo -->
+            <div class="menu-item">
+                <h3>Gamberi e aragosta al tartufo</h3>
+                <p>Com camarão e lagosta, e manteiga de trufa branca</p>
+                <span>R$ 180,00</span>
+            </div>
+
+            <!-- Alla amatriciana -->
+            <div class="menu-item">
+                <h3>Alla amatriciana</h3>
+                <p>Molho de tomate caseiro, levemente apimentado com pancetta finalizado com salsinha e pecorino</p>
+                <span>R$ 120,00</span>
+            </div>
+
+            <!-- In salsa di pomodori secchi -->
+            <div class="menu-item">
+                <h3>In salsa di pomodori secchi</h3>
+                <p>Molho de tomate seco e mussarela de búfala</p>
+                <span>R$ 130,00</span>
+            </div>
+
+            <!-- Panna e prosciutto con piselli -->
+            <div class="menu-item">
+                <h3>Panna e prosciutto con piselli</h3>
+                <p>Presunto Parma com molho branco e ervilhas</p>
+                <span>R$ 120,00</span>
+            </div>
+
+            <!-- Gamberi e salsa di pomodoro -->
+            <div class="menu-item">
+                <h3>Gamberi e salsa di pomodoro</h3>
+                <p>Massa artesanal, camarão e molho de tomate</p>
+                <span>R$ 140,00</span>
+            </div>
+
+            <!-- Ai gamberi con gorgonzola -->
+            <div class="menu-item">
+                <h3>Ai gamberi con gorgonzola</h3>
+                <p>Camarão e gorgonzola</p>
+                <span>R$ 150,00</span>
+            </div>
+
+            <!-- Ravioli mozzarella di búfala -->
+            <div class="menu-item">
+                <h3>Ravioli mozzarella di búfala</h3>
+                <p>Recheado com mussarela de búfala, molho de tomate e manjericão</p>
+                <span>R$ 120,00</span>
+            </div>
+
+            <!-- Ravioli al fenomeno -->
+            <div class="menu-item">
+                <h3>Ravioli al fenomeno</h3>
+                <p>Ravioli de ricota com espinafre e molho de tomate com cogumelos</p>
+                <span>R$ 140,00</span>
+            </div>
+
+            <!-- Al pesto e gamberi -->
+            <div class="menu-item">
+                <h3>Al pesto e gamberi</h3>
+                <p>Pesto e camarão finalizado com pecorino</p>
+                <span>R$ 150,00</span>
+            </div>
+
+            <!-- Ai gamberi e limone siciliano -->
+            <div class="menu-item">
+                <h3>Ai gamberi e limone siciliano</h3>
+                <p>Aromatizado com limão siciliano e camarão</p>
+                <span>R$ 140,00</span>
+            </div>
+
+            <!-- Nero di seppia con scampi allo zafferano -->
+            <div class="menu-item">
+                <h3>Nero di seppia con scampi allo zafferano</h3>
+                <p>Tinta da lula com creme de açafrão italiano</p>
+                <span>R$ 160,00</span>
+            </div>
+
+        </section>
+        <!-- -->
+
+        <section id="entradas-aperitivos" class="menu-section">
+            <h2>Per Iniziare....</h2>
+        
+            <!-- Insalata di burrata -->
+            <div class="menu-item">
+                <h3>Insalata di burrata</h3>
+                <p>Burrata com presunto Parma fatiado, salada orgânica, azeite de ervas, redução de balsâmico e pera caramelizada</p>
+                <span>R$ 105,00</span>
+            </div>
+        
+            <!-- Caprese Insalata -->
+            <div class="menu-item">
+                <h3>Caprese Insalata</h3>
+                <p>Salada caprese, tomate, pesto e mussarela de búfala</p>
+                <span>R$ 90,00</span>
+            </div>
+        
+            <!-- Carpaccio di carne -->
+            <div class="menu-item">
+                <h3>Carpaccio di carne</h3>
+                <p>Maravilhoso, fininho e fresco, filé mignon, lâmina de parmesão e rúcula</p>
+                <span>R$ 95,00</span>
+            </div>
+        
+            <!-- Steak Tartare -->
+            <div class="menu-item">
+                <h3>Steak Tartare</h3>
+                <p>Filé mignon picado, especialmente temperado, com gema de ovo acompanhado</p>
+                <span>R$ 110,00</span>
+            </div>
+        
+            <!-- Gamberi aperitivi -->
+            <div class="menu-item">
+                <h3>Gamberi aperitivi</h3>
+                <p>Aperitivo de camarão com cogumelos salteados</p>
+                <span>R$ 150,00</span>
+            </div>
+        
+            <!-- Polipo alla griglia con patate -->
+            <div class="menu-item">
+                <h3>Polipo alla griglia con patate</h3>
+                <p>Polvo grelhado com batata e ervas</p>
+                <span>R$ 160,00</span>
+            </div>
+        
+            <!-- Ostriche gratinate o crudo -->
+            <div class="menu-item">
+                <h3>Ostriche gratinate o crudo</h3>
+                <p>Ostras grelhadas com recheio de creme à base de queijo (06 uni) ou ostras cruas</p>
+                <span>R$ 90,00</span>
+            </div>
+        
+            <!-- Bruschetta tradizionale -->
+            <div class="menu-item">
+                <h3>Bruschetta tradizionale</h3>
+                <p>(03) Sabores variados: tomate seco com rúcula, presunto Parma e tomate fresco</p>
+                <span>R$ 90,00</span>
+            </div>
+        
+            <!-- Melanzane alla parmigiana -->
+            <div class="menu-item">
+                <h3>Melanzane alla parmigiana</h3>
+                <p>Parmegiana de berinjela com mussarela de búfala</p>
+                <span>R$ 110,00</span>
+            </div>
+        
+            <!-- Ceviche di pesce -->
+            <div class="menu-item">
+                <h3>Ceviche di pesce</h3>
+                <p>Peixe branco com frutas cítricas limão e laranja, cebola roxa e salada orgânica</p>
+                <span>R$ 100,00</span>
+            </div>
+        
+            <!-- Filetto aperitivi -->
+            <div class="menu-item">
+                <h3>Filetto aperitivi</h3>
+                <p>Filé mignon em cubos com molho especial</p>
+                <span>R$ 120,00</span>
+            </div>
+        
+            <!-- Guazzetto di cozze -->
+            <div class="menu-item">
+                <h3>Guazzetto di cozze</h3>
+                <p>Caldeirada de mexilhões, flambada ao vinho branco com salsinha e tomate cereja</p>
+                <span>R$ 120,00</span>
+            </div>
+        
+            <!-- Patate fritte (french fries) -->
+            <div class="menu-item">
+                <h3>Patate fritte (french fries)</h3>
+                <p>Batatas fritas</p>
+                <span>R$ 35,00</span>
+            </div>
+        
+            <!-- Focaccine -->
+            <div class="menu-item">
+                <h3>Focaccine</h3>
+                <p>Cogumelos e mussarela</p>
+                <span>R$ 50,00</span>
+            </div>
+        
+            <!-- Linguiça artesanal e mussarela -->
+            <div class="menu-item">
+                <h3>Linguiça artesanal e mussarela</h3>
+                <span>R$ 60,00</span>
+            </div>
+        
+            <!-- Caprese -->
+            <div class="menu-item">
+                <h3>Caprese</h3>
+                <span>R$ 55,00</span>
+            </div>
+        
+        </section>
+        
+
+
+
+    </main>
+    <footer>
+        <p>&copy; 2024 Taverna Paradiso. Todos os direitos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

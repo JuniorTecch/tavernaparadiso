@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef Nalva - Taverna Paradiso</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #1e90ff;
+            color: white;
+            text-align: center;
+            padding: 1.5em 0;
+            position: relative;
+        }
+
+        .logo-container {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: white;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            margin: 0.5em 0 0.2em 0;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        nav {
+            background-color: #0a3d62; /* Tom de azul mais escuro */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffeb3b;
+        }
+
+        main {
+            flex: 1;
+            text-align: center;
+            padding: 2em;
+        }
+
+        .chef-intro {
+            margin-bottom: 2em;
+        }
+
+        .chef-intro img {
+            width: 200px; /* Ajuste o tamanho conforme necessário */
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .chef-intro img:hover {
+            transform: scale(1.1);
+        }
+
+        .chef-intro p {
+            font-style: italic;
+            margin-top: 1em;
+            color: #555;
+        }
+
+        .photo-gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1em;
+            margin-top: 2em;
+        }
+
+        .photo-gallery img {
+            width: 200px; /* Ajuste o tamanho conforme necessário */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .photo-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #1e90ff;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="ftLogo/logo.png" alt="Logo do Restaurante">
+        </div>
+        <h1>Taverna Paradiso</h1>
+        <p>Localizado em Praia do Forte</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Cardápio</a></li>
+            <li><a href="fotos.html">Fotos</a></li>
+            <li><a href="nalva.html">Chef Nalva</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="chef-intro">
+            <img src="ftNalva/n1.png" alt="Foto de Nalva">
+            <h2>Chef Nalva</h2>
+            <p>Fundadora do Taverna Paradiso, Nalva é uma chef brasileira, especialista em comida italiana. Mãe de dois filhos, ela traz sua paixão pela culinária autêntica para nosso restaurante.</p>
+        </section>
+
+        <h2>Galeria de Fotos</h2>
+        <div class="photo-gallery">
+            <img src="ftNalva/n2.png" alt="Foto 2">
+            <img src="ftNalva/n3.png" alt="Foto 3">
+            <img src="ftNalva/n4.png" alt="Foto 4">
+            <img src="ftNalva/n5.png" alt="Foto 5">
+            
+            <!-- Adicione mais fotos conforme necessário -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Taverna Paradiso. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
